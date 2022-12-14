@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,800;1,900&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'montserrat', sans-serif;
+}
+
+.bold{
+  font-weight: 600;
+}
+
+.navbar{
+  box-shadow: 0px 4px 8px rgba(25, 25, 25, 0.08);
+}
+
+.container{
+  max-width: 1450px;
+  margin-top: 100px;
+}
+
+.meme-header{
+  padding: 15px;
+}
+
+.meme-logo{
+  width: 200px;
+}
+
+.hero-heading{
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.btn-custom{
+  background: #79f2ff;
+  padding: 21px 90px;
+  color: #31343e;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn-custom:hover{
+  /* background: #79f2ff; */
+  padding: 21px 90px;
+  color: #31343e;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid gray;
+}
+
+.hero-img{
+  border-radius: 2px;
+  position: relative;
+}
+
+.meme-topText{
+  position: absolute;
+  top: 60px;
+  left: 25px;
+  color: white;
+  font-size: 90px;
+  
+}
+
+.meme-bottomText{
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  color: white;
+  font-size: 38px;
+}
+
+
+
+input[type=text] {
+  padding: 8px 10px;
+  box-sizing: border-box;
+  position: relative;  
+}
+
+.btn-hero{
+  background: #79f2ff;
+  padding: 10px 15px;
+  color: #31343e;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.inp-fontColor{
+  border-radius: 20%;
+  background-color:black;
+  padding: 4px 14px;
+}
+
+.slider-item{
+  min-width: 150px;
+  height: 150px;
+  background: black;
+  margin: 2px;
+}
+
