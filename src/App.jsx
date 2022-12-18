@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import logo from './assets/meme-logo.png'
 import About from './components/About'
-import Slider from './components/Slider'
+import Slider from './components/slider'
 import MemeCard from './components/MemeCard'
 import NavBar from './components/NavBar'
 

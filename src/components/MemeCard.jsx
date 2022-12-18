@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import Slider from "./Slider";
+import Slider from "./slider";
 
 function MemeCard(props) {
 
