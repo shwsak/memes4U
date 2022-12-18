@@ -28,6 +28,7 @@ body{
 
 .meme-logo{
   width: 200px;
+  mix-blend-mode: multiply;
 }
 
 
