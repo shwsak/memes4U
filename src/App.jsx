@@ -1,10 +1,8 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import logo from './assets/meme-logo.png'
-import Header from './components/NavBar'
 import About from './components/About'
 import Slider from './components/Slider'
-import Hero from './components/MemeCard'
 import MemeCard from './components/MemeCard'
 import NavBar from './components/NavBar'
 
@@ -36,7 +34,7 @@ function App() {
 
   return (
     <>
-      <NavBar logo={logo} />
+      <NavBar logo={logo}/>
       <div className='container py-5'>
         <About />
         <Slider allMemes={allMemes} handleSlider={handleSlider} />

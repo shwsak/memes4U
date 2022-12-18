@@ -6,7 +6,7 @@ function Slider(props) {
                 props.allMemes.map((data) => (
                     <div key={data.id} onClick={()=> props.handleSlider(data.id, data.url)} className="slider-item">
                         <img src={data.url} />
-                        <p>Megamine Peeking</p>
+                        <p>{data.name}</p>
                     </div>))
             }
         </div>
@@ -14,5 +14,3 @@ function Slider(props) {
 }
 
 export default Slider;
-
-// style={{overflowX:'scroll',width:"800px",margin:"10px"}}
