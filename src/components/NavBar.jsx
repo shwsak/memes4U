@@ -1,4 +1,4 @@
-function Header(props) {
+function NavBar(props) {
     return (
         <nav className="navbar navbar-light bg-light fixed-top">
             <div className="container-fluid meme-header">
@@ -8,4 +8,4 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default NavBar;
