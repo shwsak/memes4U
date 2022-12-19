@@ -18,16 +18,18 @@ function MemeCard(props) {
 
     const MemeTopText = styled.p`
         position: absolute;
-        top: 50px;
-        left: 25px;
+        width: 100%;
+        top: 10px;
+        text-align: center;
         color: ${memeFontColor};
         font-size: ${props.meme.fontSize + "px"};    
     `;
 
     const MemeBottomText = styled.p`
         position: absolute;
-        bottom: 50px;
-        right: 25px;
+        width: 100%;
+        bottom: 10px;
+        text-align: center;
         color: ${memeFontColor};
         font-size: ${props.meme.fontSize + "px"};
     `;
@@ -45,18 +47,18 @@ function MemeCard(props) {
     `;
 
     return (
-        <div className="d-flex m-5 py-3 justify-content-around">
+        <div className="d-flex m-5 py-3 justify-content-around flex-lg-row flex-column ">
 
-            <div className="w-50 meme-img">
+            <div className="meme-width meme-img">
                 <img className="w-100 hero-img" src={props.memeImages} alt="" />
                 <MemeTopText>{props.meme.topText}</MemeTopText>
                 <MemeBottomText>{props.meme.bottomText}</MemeBottomText>
             </div>
 
-            <div>
+            <div className="meme-inputs meme-form">
                
                 <h5 className="bold">Add:</h5>
-                <input className="me-2" type="text" placeholder="Top text.." name="topText" onChange={getInput} />
+                <input className="me-2 meme-add" type="text" placeholder="Top text.." name="topText" onChange={getInput} />
                 <input className="mb-4" type="text" placeholder="Bottom text.." name="bottomText" onChange={getInput} />
 
                 

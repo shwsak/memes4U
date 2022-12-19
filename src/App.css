@@ -71,10 +71,6 @@ body{
   font-size: 38px;
 }
 
-.w-60{
-  width: 55%;
-}
-
 input[type=text] {
   padding: 8px 10px;
   box-sizing: border-box;
@@ -131,5 +127,24 @@ input[type=text] {
   font-size: 15px;
   color: #fff;
   font-weight: 500;
+}
+
+.meme-width{
+  width: 50%;
+}
+
+
+@media screen and (max-width:1000px){
+
+.meme-width{
+  width: 100%;
+}
+.meme-inputs{
+  margin-top: 12px;
+}
+
+.meme-add{
+  margin-bottom: 10px;
+}
 }
 
