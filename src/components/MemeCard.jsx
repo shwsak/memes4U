@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "@emotion/styled";
+import domtoimage from 'dom-to-image';
+import { saveAs } from "file-saver";
+
 
 
 function MemeCard(props) {
@@ -14,7 +17,7 @@ function MemeCard(props) {
         }))
     }
 
-    console.log(memeFontColor)
+
 
     const MemeTopText = styled.p`
         position: absolute;
@@ -46,29 +49,42 @@ function MemeCard(props) {
         background-color: black;
     `;
 
+    const memeImgRef = useRef("");
+
+    const memeImgId = memeImgRef.current.id;
+
+    function downloadMeme() {
+        domtoimage.toBlob(document.getElementById(memeImgId))
+            .then(function (blob) {
+                window.saveAs(blob, 'my-meme.png');
+            });
+
+    }
+
+
     return (
         <div className="d-flex m-5 py-3 justify-content-around flex-lg-row flex-column ">
 
-            <div className="meme-width meme-img">
+            <div id="imeme" ref={memeImgRef} className="meme-width meme-img">
                 <img className="w-100 hero-img" src={props.memeImages} alt="" />
                 <MemeTopText>{props.meme.topText}</MemeTopText>
                 <MemeBottomText>{props.meme.bottomText}</MemeBottomText>
             </div>
 
             <div className="meme-inputs meme-form">
-               
+
                 <h5 className="bold">Add:</h5>
                 <input className="me-2 meme-add" type="text" placeholder="Top text.." name="topText" onChange={getInput} />
                 <input className="mb-4" type="text" placeholder="Bottom text.." name="bottomText" onChange={getInput} />
 
-                
+
                 <h5 className="bold">Font size:</h5>
                 <input className=" mb-4" type="text" placeholder="12..." name="fontSize" onChange={getInput} />
 
                 <div className="d-flex mb-4">
                     <h5 className="bold me-2">Font color:</h5>
-                    <MemeFontWhite onClick={()=> setMemeFontColor("white")}></MemeFontWhite>
-                    <MemeFontBlack onClick={()=> setMemeFontColor("black")}></MemeFontBlack>
+                    <MemeFontWhite onClick={() => setMemeFontColor("white")}></MemeFontWhite>
+                    <MemeFontBlack onClick={() => setMemeFontColor("black")}></MemeFontBlack>
                 </div>
 
                 {/* <h5 className="bold">Position - Top Text:</h5>
@@ -81,7 +97,7 @@ function MemeCard(props) {
 
 
                 <div className="d-flex justify-content-end">
-                    <button className="btn btn-hero">Download</button>
+                    <button className="btn btn-hero" onClick={downloadMeme}>Download</button>
                 </div>
             </div>
 
