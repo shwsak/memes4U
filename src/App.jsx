@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import logo from './assets/meme-logo.png'
 import About from './components/About'
-import Slider from './components/Slider'
+import Slider from './components/slider'
 import MemeCard from './components/MemeCard'
 import NavBar from './components/NavBar'
 
@@ -13,7 +13,7 @@ function App() {
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
-    fontSize: "38px",
+    fontSize: "35",
     memeImages: "https://i.imgflip.com/3oevdk.jpg"
 });
 
@@ -24,8 +24,6 @@ function App() {
       .then(data => setAllMemes(data.data.memes))
   }, [])
   
-  console.log(meme)
-
   function handleSlider(id, url) {
     setMeme((prevMeme => ({...prevMeme, memeImages:url,}))
     )

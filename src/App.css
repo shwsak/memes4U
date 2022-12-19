@@ -56,19 +56,12 @@ body{
   border: 2px solid gray;
 }
 
-.hero-img{
+.meme-img{
   border-radius: 2px;
   position: relative;
 }
 
-.meme-topText{
-  position: absolute;
-  top: 60px;
-  left: 25px;
-  color: white;
-  font-size: 38px;
-  
-}
+
 
 .meme-bottomText{
   position: absolute;

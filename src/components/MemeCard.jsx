@@ -1,8 +1,11 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import Slider from "./Slider";
+
 
 function MemeCard(props) {
+
+
+    const [memeFontColor, setMemeFontColor] = useState("black")
 
     function getInput(e) {
         props.setMeme((prevUrl) => ({
@@ -11,50 +14,75 @@ function MemeCard(props) {
         }))
     }
 
-    const TopText = styled.p`
+    console.log(memeFontColor)
+
+    const MemeTopText = styled.p`
         position: absolute;
-        top: 100px;
+        top: 50px;
         left: 25px;
-        color: white;
-        font-size: 50px;
-        s
-    `
+        color: ${memeFontColor};
+        font-size: ${props.meme.fontSize + "px"};    
+    `;
+
+    const MemeBottomText = styled.p`
+        position: absolute;
+        bottom: 50px;
+        right: 25px;
+        color: ${memeFontColor};
+        font-size: ${props.meme.fontSize + "px"};
+    `;
+
+    const MemeFontWhite = styled.button`
+        border-radius: 20%;
+        padding: 4px 14px;
+        margin-right: 8px;
+        background-color:white;
+       
+    `;
+
+    const MemeFontBlack = styled(MemeFontWhite)`
+        background-color: black;
+    `;
+
     return (
         <div className="d-flex m-5 py-3 justify-content-around">
 
-            <div className="w-50 hero-img">
+            <div className="w-50 meme-img">
                 <img className="w-100 hero-img" src={props.memeImages} alt="" />
-                <h2 className="meme-topText" style={{ fontSize: props.meme.fontSize + "px" }}>{props.meme.topText}</h2>
-                <h2 className="meme-bottomText" style={{ fontSize: props.meme.fontSize + "px" }}>{props.meme.bottomText}</h2>
-                {/* <TopText>hello</TopText> */}
+                <MemeTopText>{props.meme.topText}</MemeTopText>
+                <MemeBottomText>{props.meme.bottomText}</MemeBottomText>
             </div>
+
             <div>
-                {/* Add texts section */}
+               
                 <h5 className="bold">Add:</h5>
                 <input className="me-2" type="text" placeholder="Top text.." name="topText" onChange={getInput} />
                 <input className="mb-4" type="text" placeholder="Bottom text.." name="bottomText" onChange={getInput} />
 
-                {/* <h5 className="bold">Position - top text:</h5>
-                    <input className="me-2" type="text" placeholder="x axis.." />
-                    <input className="mb-4" type="text" placeholder="y axis.." />
-
-                    <h5 className="bold">Position - bottom text:</h5>
-                    <input className="me-2" type="text" placeholder="x axis.." />
-                    <input className="mb-4" type="text" placeholder="y axis.." /> */}
-
+                
                 <h5 className="bold">Font size:</h5>
                 <input className=" mb-4" type="text" placeholder="12..." name="fontSize" onChange={getInput} />
 
-                <div className="d-flex">
+                <div className="d-flex mb-4">
                     <h5 className="bold me-2">Font color:</h5>
-                    <button className="me-2 inp-fontColor"></button>
-                    <button className="inp-fontColor"></button>
+                    <MemeFontWhite onClick={()=> setMemeFontColor("white")}></MemeFontWhite>
+                    <MemeFontBlack onClick={()=> setMemeFontColor("black")}></MemeFontBlack>
                 </div>
+
+                {/* <h5 className="bold">Position - Top Text:</h5>
+                    <input className="me-2" type="text" placeholder="x axis.." />
+                    <input className="mb-4" type="text" placeholder="y axis.." />
+
+                    <h5 className="bold">Position - Bottom Text:</h5>
+                    <input className="me-2" type="text" placeholder="x axis.." />
+                    <input className="mb-4" type="text" placeholder="y axis.." /> */}
+
 
                 <div className="d-flex justify-content-end">
                     <button className="btn btn-hero">Download</button>
                 </div>
             </div>
+
         </div>
 
 
